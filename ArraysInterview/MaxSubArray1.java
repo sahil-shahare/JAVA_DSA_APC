@@ -1,10 +1,3 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
-
 public class MaxSubArray1 {
     public static void main(String[] args) {
         int[] n1 = { 1, 2, 3, 5, 6, 7, 8 };

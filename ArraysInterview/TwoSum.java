@@ -1,9 +1,5 @@
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class TwoSum {
     public static void main(String[] args) {
@@ -11,18 +7,20 @@ public class TwoSum {
         twoSum(n1, 15);
     }
 
-    public static void twoSum(int[] n, int target) {
+    public static int[] twoSum(int[] n, int target) {
 
-            Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-            for (int i = 0; i < n.length; i++) {
-                int result = target = n[i];
-                if (map.containsKey(result)) {
-                    System.out.println("Index: " + map.get(result) + ", " + i);
-                    return;
-                }
-                map.put(n[i], i);
-
+        for (int i = 0; i < n.length; i++) {
+            int result = target = n[i];
+            if (map.containsKey(result)) {
+                // System.out.println("Index: " + map.get(result) + ", " + i);
+                return new int[] { map.get(result), i };
             }
+            map.put(n[i], i);
+            // System.out.println("Not Found");
+
         }
+        return new int[] {};
+    }
 }

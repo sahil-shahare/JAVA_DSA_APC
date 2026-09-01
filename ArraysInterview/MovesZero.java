@@ -1,31 +1,42 @@
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
 
 public class MovesZero {
     public static void main(String[] args) {
-        int[] n = { 1, 0, 5, 8, 0, 6, 4, 5, 2, 30, 0, 12, 120, 0, 325, 264 };
-        movesZero(n);
+        int[] arr1 = { 0, 1, 0, 3, 12 };
+        int[] arr2 = { 0, 1, 0, 3, 12, 0, 0 };
+        System.out.println(Arrays.toString(movesZeroRigth(arr1)));
+        System.out.println(Arrays.toString(movesZeroLeft(arr2)));
     }
 
-    public static void movesZero(int[] n) {
-            int i = 0;
-            for (int j = 0; j < n.length; j++) {
-                if (n[j] != 0) {
-                    n[i++] = n[j];
-                }
-            }
+    public static int[] movesZeroRigth(int[] arr) {
+        int j = 0;
 
-            while (i < n.length) {
-                n[i++] = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                arr[j++] = arr[i];
             }
-
-            for (int in : n) {
-                System.out.print(in + " ");
-            }
-            System.out.println();
         }
+
+        while (j < arr.length) {
+            arr[j++] = 0;
+        }
+
+        return arr;
+    }
+
+    public static int[] movesZeroLeft(int[] arr) {
+        int j = arr.length - 1;
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] != 0) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+
+                j--;
+            }
+        }
+
+        return arr;
+    }
 }
