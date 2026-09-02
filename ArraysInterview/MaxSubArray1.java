@@ -14,9 +14,7 @@ public class MaxSubArray1 {
                 for (int k = i; k <= j; k++) {
                     currSum += n[k];
                 }
-                if (maxSum < currSum) {
-                    maxSum = currSum;
-                }
+               maxSum = Math.max(maxSum, currSum);
             }
         }
         System.out.println("MaxSum: " + maxSum);
