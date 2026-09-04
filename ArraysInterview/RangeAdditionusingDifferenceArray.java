@@ -11,14 +11,17 @@ public class RangeAdditionusingDifferenceArray {
 
         diff[L] += value;
 
+        //Check outOfBoundArray
         if (diff[R + 1] < arr.length) {
             diff[R + 1] -= value;
         }
 
+        //calculate Prefix
         for (int i = 1; i < diff.length; i++) {
             diff[i] = diff[i - 1] + arr[i];
         }
 
+        //Add original Array
         for (int i = 0; i < arr.length; i++) {
             arr[i] += diff[i];
         }
