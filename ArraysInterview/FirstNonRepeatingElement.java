@@ -22,7 +22,7 @@ public class FirstNonRepeatingElement {
                 return i;
             }
         }
-
+        
         return -1;
 
     }
